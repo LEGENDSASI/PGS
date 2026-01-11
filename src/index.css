@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+
+
+:root {
+  /* Primary (Teal - Logo main) */
+  --color-primary:43 100% 46%;
+  --color-primary-foreground: 0 0% 100%;
+
+  /* Accent (Yellow - Logo highlight) */
+  --color-accent: 45 95% 60%;
+  --color-accent-foreground: 222 47% 11%;
+
+  /* Base UI */
+  --color-bg: 0 0% 100%;
+  --color-text: 222 47% 11%;
+  --color-border: 214 32% 91%;
+}
+
+.dark {
+  /* Primary (slightly brighter for dark mode) */
+  --color-primary: 174 50% 50%;
+  --color-primary-foreground: 0 0% 100%;
+
+  /* Accent (slightly muted) */
+  --color-accent: 45 90% 55%;
+  --color-accent-foreground: 222 47% 11%;
+
+  /* Base UI */
+  --color-bg: 222 47% 11%;
+  --color-text: 210 40% 98%;
+  --color-border: 217 32% 17%;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
