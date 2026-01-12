@@ -13,6 +13,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   // Get current logo based on path
   const getCurrentLogo = () => {
@@ -50,11 +51,10 @@ const Navbar = () => {
       id: 'about',
       name: 'About Us',
       type: 'dropdown',
-      action: () => handleScrollToSection('about'),
       items: [
         {
           name: 'Our Team',
-        action: () => navigateToPage('/our-team')
+          action: () => navigateToPage('/our-team')
         }
       ]
     },
@@ -79,30 +79,23 @@ const Navbar = () => {
           action: () => navigateToPage('/pgs-events')
         }
       ]
-    }
-    ,
+    },
     {
-
+      id: 'contact',
       name: 'Contact Us',
       type: 'link',
       path: '/contact-us',
       action: () => navigateToPage('/contact-us')
-
-
     },
   ];
 
-  // Handle scroll to section - FIXED VERSION
+  // Handle scroll to section
   const handleScrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
-      // Navigate to home page first
       navigate('/');
-
-      // Wait for navigation and DOM update, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          // Small delay to ensure page is loaded
           setTimeout(() => {
             element.scrollIntoView({
               behavior: 'smooth',
@@ -110,12 +103,10 @@ const Navbar = () => {
             });
           }, 200);
         } else {
-          // Fallback: scroll to top if element not found
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       }, 50);
     } else {
-      // We're already on home page
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({
@@ -124,8 +115,6 @@ const Navbar = () => {
         });
       }
     }
-
-    // Close mobile menu
     setIsOpen(false);
     setActiveDropdown(null);
   };
@@ -160,16 +149,45 @@ const Navbar = () => {
     return location.pathname === path || location.pathname.includes(path);
   };
 
-  // Close dropdown when clicking outside
+  // Toggle dropdown in mobile - FIXED FUNCTION
+  const toggleMobileDropdown = (itemId, e) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    setActiveDropdown(activeDropdown === itemId ? null : itemId);
+  };
+
+  // Close dropdown when clicking outside - FIXED VERSION
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      // Don't close if clicking on dropdown items or menu button
+      if (
+        dropdownRef.current && 
+        !dropdownRef.current.contains(event.target) &&
+        !event.target.closest('[data-dropdown-item]') &&
+        !event.target.closest('[data-dropdown-button]')
+      ) {
+        setActiveDropdown(null);
+      }
+      
+      // Close mobile menu when clicking outside
+      if (
+        mobileMenuRef.current && 
+        !mobileMenuRef.current.contains(event.target) &&
+        !event.target.closest('[data-menu-button]')
+      ) {
+        setIsOpen(false);
         setActiveDropdown(null);
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
   }, []);
 
   // Close mobile menu on route change
@@ -221,7 +239,13 @@ const Navbar = () => {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                onClick={item.action || (() => setActiveDropdown(activeDropdown === item.id ? null : item.id))}
+                onClick={() => {
+                  if (item.id === 'about') {
+                    handleScrollToSection('about');
+                  } else {
+                    setActiveDropdown(activeDropdown === item.id ? null : item.id);
+                  }
+                }}
                 className={`px-4 py-3 text-lg font-medium cursor-pointer transition-all duration-300 flex items-center gap-1 relative group ${isActive(item) ? 'text-primary' : ''
                   }`}
                 style={{
@@ -263,6 +287,7 @@ const Navbar = () => {
                   {item.items.map((subItem, index) => (
                     <button
                       key={index}
+                      data-dropdown-item
                       onClick={subItem.action}
                       className={`w-full text-left px-4 py-3 transition-all duration-200 flex items-center text-lg ${item.id === 'branches' && isBranchActive(subItem.path)
                           ? 'bg-primary bg-opacity-10 text-primary'
@@ -289,19 +314,26 @@ const Navbar = () => {
     </div>
   );
 
+  // Mobile navigation - COMPLETELY FIXED VERSION
   const renderMobileNav = () => (
-    <div className="md:hidden border-t py-4"
+    <div 
+      ref={mobileMenuRef}
+      className="md:hidden border-t py-4"
       style={{
         borderColor: 'hsl(var(--color-border))',
         backgroundColor: 'hsl(var(--color-bg))'
       }}
+      onClick={(e) => e.stopPropagation()} // Prevent click propagation
     >
       {navItems.map((item) => {
         if (item.type === 'link') {
           return (
             <button
               key={item.id}
-              onClick={item.action}
+              onClick={(e) => {
+                e.stopPropagation();
+                item.action();
+              }}
               className={`w-full text-left font-medium text-lg py-3 px-4 rounded-lg my-1 ${isActive(item) ? 'bg-primary bg-opacity-10 text-primary' : ''
                 }`}
               style={{
@@ -316,15 +348,19 @@ const Navbar = () => {
         }
 
         if (item.type === 'dropdown') {
+          const isDropdownOpen = activeDropdown === item.id;
+          
           return (
-            <div key={item.id} className="my-1">
+            <div 
+              key={item.id} 
+              className="my-1"
+              onClick={(e) => e.stopPropagation()} // Prevent click propagation
+            >
               <button
-                onClick={() => {
-                  if (item.action) {
-                    item.action();
-                  } else {
-                    setActiveDropdown(activeDropdown === item.id ? null : item.id);
-                  }
+                data-dropdown-button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleMobileDropdown(item.id, e);
                 }}
                 className={`w-full text-left font-medium py-3 px-4 rounded-lg text-lg flex justify-between items-center ${isActive(item) ? 'bg-primary bg-opacity-10 text-primary' : ''
                   }`}
@@ -335,20 +371,27 @@ const Navbar = () => {
                 }}
               >
                 <span>{item.name}</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.id ? 'rotate-180' : ''
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''
                   }`} />
               </button>
 
-              {/* Dropdown items */}
-              {activeDropdown === item.id && item.items && (
-                <div className="pl-6 mt-1 space-y-1">
+              {/* Dropdown items - FIXED: Proper click handling */}
+              {isDropdownOpen && item.items && (
+                <div 
+                  className="pl-6 mt-1 space-y-1"
+                  onClick={(e) => e.stopPropagation()} // Prevent click propagation
+                >
                   {item.items.map((subItem, index) => (
                     <button
                       key={index}
-                      onClick={subItem.action}
+                      data-dropdown-item
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        subItem.action();
+                      }}
                       className={`w-full text-left py-3 px-4 rounded-lg font-medium text-lg ${item.id === 'branches' && isBranchActive(subItem.path)
                           ? 'bg-primary bg-opacity-20 text-primary'
-                          : ''
+                          : 'hover:bg-primary hover:bg-opacity-10'
                         }`}
                       style={{
                         color: item.id === 'branches' && isBranchActive(subItem.path)
@@ -397,6 +440,7 @@ const Navbar = () => {
 
           <div className="md:hidden">
             <button
+              data-menu-button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg"
               style={{ color: 'hsl(var(--color-text))' }}

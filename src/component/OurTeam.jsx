@@ -47,14 +47,14 @@ const OurTeam = () => {
       languages: "Hindi, English, Tamil, Urdu, French",
       stats: { experience: "5+ Years", tours: "1000+" }
     },
-    {
-      id: 4,
-      name: "Shalini",
-      role: "BDE & Tourist Guide",
-      division: "PGS Holidays",
-      image: t4,
-      languages: "English, Tamil",
-      stats: { experience: "4+ Years", clients: "300+" }
+     {
+      id: 6,
+      name: "Sasikumar",
+      role: "Digital Marketing",
+      division: "",
+      image: t6,
+      languages: "",
+      stats: { experience: "6+ Years", campaigns: "150+" }
     },
     {
       id: 5,
@@ -65,15 +65,16 @@ const OurTeam = () => {
       languages: "",
       stats: { experience: "3+ Years", deals: "200+" }
     },
-    {
-      id: 6,
-      name: "Sasikumar",
-      role: "Digital Marketing",
-      division: "",
-      image: t6,
-      languages: "",
-      stats: { experience: "6+ Years", campaigns: "150+" }
+     {
+      id: 4,
+      name: "Shalini",
+      role: "BDE & Tourist Guide",
+      division: "PGS Holidays",
+      image: t4,
+      languages: "English, Tamil",
+      stats: { experience: "4+ Years", clients: "300+" }
     },
+  
     {
       id: 7,
       name: "Akshai",

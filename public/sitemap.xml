@@ -2,38 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://YOUR_DOMAIN_HERE/</loc>
+    <loc>https://www.pgsgroups.in/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://YOUR_DOMAIN_HERE/#about</loc>
+    <loc>https://www.pgsgroups.in/our-team</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://YOUR_DOMAIN_HERE/#services</loc>
+    <loc>https://www.pgsgroups.in/pgs-stays</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://YOUR_DOMAIN_HERE/#properties</loc>
+    <loc>https://www.pgsgroups.in/pgs-holidays</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://YOUR_DOMAIN_HERE/#certificates</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.pgsgroups.in/pgs-events</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://YOUR_DOMAIN_HERE/#team</loc>
+    <loc>https://www.pgsgroups.in/contact-us</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

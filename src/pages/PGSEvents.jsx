@@ -21,7 +21,6 @@ const PGSEvents = () => {
       <OurProperties/>
       <WhatWeProvideSection/>
       <Reviews/>
-      <Footer/>
     </div>
   )
 }
