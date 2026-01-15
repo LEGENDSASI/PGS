@@ -291,7 +291,7 @@ const Navbar = () => {
                       onClick={subItem.action}
                       className={`w-full text-left px-4 py-3 transition-all duration-200 flex items-center text-lg ${item.id === 'branches' && isBranchActive(subItem.path)
                           ? 'bg-primary bg-opacity-10 text-primary'
-                          : 'hover:bg-primary hover:bg-opacity-10 hover:text-primary'
+                          : 'hover:bg-primary hover:bg-opacity-10 hover:text-primary cursor-pointer'
                         }`}
                       style={{
                         color: item.id === 'branches' && isBranchActive(subItem.path)

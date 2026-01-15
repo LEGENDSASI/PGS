@@ -76,7 +76,7 @@ const AboutUs = () => {
           </h2>
 
           <p
-            className="text-lg max-w-2xl mx-auto leading-relaxed"
+            className="text-lg  mx-auto leading-relaxed"
             style={{ color: 'hsl(var(--color-text) / 0.8)' }}
           >
             PGS Group brings together stays, trips, and events under one trusted name.
