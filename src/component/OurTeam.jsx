@@ -10,6 +10,8 @@ import t5 from "../assets/OurTeam/5.jpg";
 import t6 from "../assets/OurTeam/6.png";
 import t7 from "../assets/OurTeam/7.jpg";
 import sasikumar from '../assets/OurTeam/sashikumar.png'
+import t8 from '../assets/OurTeam/iniyashri.jpg'
+
 
 const OurTeam = () => {
   useEffect(() => {
@@ -23,6 +25,8 @@ const OurTeam = () => {
     { id: 5, name: "Harini", role: "Business Development Executive", image: t5 },
     { id: 3, name: "Shafreen", role: "Tourist Guide", image: t3 },
     { id: 7, name: "Akshai", role: "Tourist Guide", image: t7 },
+    { id: 7, name: "Iniyashre", role: "BDE / Tourist Guide", image: t8 },
+
     { id: 6, name: "Sasikumar", role: "Digital Marketing", image: sasikumar },
   ];
 
