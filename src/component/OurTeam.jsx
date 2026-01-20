@@ -21,16 +21,16 @@ const OurTeam = () => {
   const teamMembers = [
     { id: 1, name: "Keerthika", role: "CEO & Managing Director", image: t1 },
     { id: 2, name: "Priya Soop", role: "Project Manager", image: t2 },
-    { id: 4, name: "Shalini", role: "BDE & Tourist Guide", image: t4 },
+    { id: 4, name: "Shalini", role: "BDE & Tourist Guide", image: t4 , language : 'English, Tamil' },
     { id: 5, name: "Harini", role: "Business Development Executive", image: t5 },
-    { id: 3, name: "Shafreen", role: "Tourist Guide", image: t3 },
-    { id: 7, name: "Akshai", role: "Tourist Guide", image: t7 },
-    { id: 7, name: "Iniyashre", role: "BDE / Tourist Guide", image: t8 },
+    { id: 3, name: "Shafreen", role: "Tourist Guide", image: t3 , language : 'Hindi, English, Tamil, urdu, French' },
+    { id: 7, name: "Akshai", role: "Tourist Guide", image: t7  , language : 'English, Tamil, Hindi'},
+    { id: 7, name: "Iniyashre", role: "BDE / Tourist Guide", image: t8 , language : 'Tamil, English, Hindi, Telugu'},
 
     { id: 6, name: "Sasikumar", role: "Digital Marketing", image: sasikumar },
   ];
 
-  /* 🔥 KEY PART: variants controlled by CARD */
+
   const bottomBarVariants = {
     rest: { height: 64 },
     hover: { height: 130 },
@@ -40,7 +40,7 @@ const OurTeam = () => {
     <div className="py-14 px-4 bg-[hsl(var(--color-bg))]">
       <div className="max-w-7xl mx-auto">
 
-        {/* HEADER */}
+  
         <div className="text-center mb-14">
         
 
@@ -49,7 +49,7 @@ const OurTeam = () => {
           </h2>
         </div>
 
-        {/* GRID */}
+      
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {teamMembers.map((member) => (
             <motion.div
@@ -92,6 +92,10 @@ const OurTeam = () => {
 
                 <p className="text-xs text-gray-600 group-hover:text-white/80">
                   {member.role}
+                </p>
+
+  <p className="text-xs text-gray-600 group-hover:text-white/80">
+                  {member?.language}
                 </p>
 
               </motion.div>
