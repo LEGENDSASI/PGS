@@ -33,7 +33,7 @@ const OurTeam = () => {
 
 const bottomBarVariants = {
   rest: {
-    height: window.innerWidth < 640 ? 140 : 64,
+    height: window.innerWidth < 640 ? 80 : 64,
   },
   hover: { height: 140 },
 };
