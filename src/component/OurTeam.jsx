@@ -25,16 +25,18 @@ const OurTeam = () => {
     { id: 5, name: "Harini", role: "Business Development Executive", image: t5 },
     { id: 3, name: "Shafreen", role: "Tourist Guide", image: t3 , language : 'Hindi, English, Tamil, urdu, French' },
     { id: 7, name: "Akshai", role: "Tourist Guide", image: t7  , language : 'English, Tamil, Hindi'},
-    { id: 7, name: "Iniyashre", role: "BDE / Tourist Guide", image: t8 , language : 'Tamil, English, Hindi, Telugu'},
+    { id: 8, name: "Iniyashre", role: "BDE / Tourist Guide", image: t8 , language : 'Tamil, English, Hindi, Telugu'},
 
     { id: 6, name: "Sasikumar", role: "Digital Marketing", image: sasikumar },
   ];
 
 
-  const bottomBarVariants = {
-    rest: { height: 64 },
-    hover: { height: 140 },
-  };
+const bottomBarVariants = {
+  rest: {
+    height: window.innerWidth < 640 ? 140 : 64,
+  },
+  hover: { height: 140 },
+};
 
   return (
     <div className="py-14 px-4 bg-[hsl(var(--color-bg))]">
@@ -57,6 +59,7 @@ const OurTeam = () => {
               initial="rest"
               animate="rest"
               whileHover="hover"
+                whileTap="hover"  
               className="
                 relative group overflow-hidden
                 bg-white 
