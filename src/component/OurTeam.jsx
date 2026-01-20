@@ -33,7 +33,7 @@ const OurTeam = () => {
 
   const bottomBarVariants = {
     rest: { height: 64 },
-    hover: { height: 130 },
+    hover: { height: 140 },
   };
 
   return (
