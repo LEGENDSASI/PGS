@@ -4,6 +4,7 @@ import { Users } from "lucide-react";
 
 import t1 from "../assets/OurTeam/1.PNG";
 import t2 from "../assets/OurTeam/2.jpg";
+import divyaMaharajan from '../assets/OurTeam/dhivyaMaharajan.jpeg';
 import t3 from "../assets/OurTeam/3.png";
 import t4 from "../assets/OurTeam/4.jpg";
 import t5 from "../assets/OurTeam/5.jpg";
@@ -21,6 +22,7 @@ const OurTeam = () => {
   const teamMembers = [
     { id: 1, name: "Keerthika", role: "CEO & Managing Director", image: t1 },
     { id: 2, name: "Priya Soop", role: "Project Manager", image: t2 },
+    { id: 9, name: "Dhivya Maharajan", role: "Human Resource & Procurement", image: divyaMaharajan},
     { id: 4, name: "Shalini", role: "BDE & Tourist Guide", image: t4 , language : 'English, Tamil' },
     { id: 5, name: "Harini", role: "Business Development Executive", image: t5 },
     { id: 3, name: "Shafreen", role: "Tourist Guide", image: t3 , language : 'Hindi, English, Tamil, urdu, French' },
