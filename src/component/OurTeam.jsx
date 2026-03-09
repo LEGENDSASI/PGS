@@ -26,7 +26,7 @@ const OurTeam = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     fetchReviewStats();
   }, []);
-  let baseUrl = process.env.BACKEND_URI;
+  let baseUrl = import.meta.env.VITE_BACKEND_URI;
   const fetchReviewStats = async () => {
     try {
       const response = await fetch(`${baseUrl}/average-reviews`);
