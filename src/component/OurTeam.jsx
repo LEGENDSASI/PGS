@@ -26,10 +26,10 @@ const OurTeam = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     fetchReviewStats();
   }, []);
-
+  let baseUrl = process.env.BACKEND_URI;
   const fetchReviewStats = async () => {
     try {
-      const response = await fetch("http://localhost:4000/average-reviews");
+      const response = await fetch(`${baseUrl}/average-reviews`);
       const data = await response.json();
       setReviewStats(data);
     } catch (error) {
@@ -63,7 +63,7 @@ const OurTeam = () => {
     const loadingToast = toast.loading("Submitting review...");
     setIsSubmitting(true);
     try {
-      const response = await fetch("http://localhost:4000/add-review", {
+      const response = await fetch(`${baseUrl}/add-review`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
