@@ -27,8 +27,6 @@ function App() {
           <Route path="/pgs-events" element={<PGSEvents />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/our-team" element={<OurTeam />} />
-
-
         </Routes>
         <WhatsAppButton />
         <Footer/>
