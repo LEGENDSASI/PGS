@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Facebook, Instagram } from 'lucide-react';
+import { TbBrandGoogle } from "react-icons/tb";
 import logo from '../assets/logo.png';
 
 const Footer = () => {
@@ -67,6 +68,24 @@ const Footer = () => {
             }}
           >
             <Phone className="w-6 h-6" />
+          </a>
+
+          <a
+            href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0rCiOLzassjA3YLRSNagwTjQ1NjNMSUwzNzY0NklNszKoSEsxNTBOtTSztDQySLJINvESLsjPS6lUSE8tSSxPrFQoLkmsLAYAJjoWsw&q=pondy+getaway+stays&oq=P&gs_lcrp=EgZjaHJvbWUqFQgBEC4YJxivARjHARiABBiKBRiOBTIGCAAQRRg8MhUIARAuGCcYrwEYxwEYgAQYigUYjgUyBggCEEUYOzIGCAMQRRg5MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgzMjkxajBqN6gCCLACAfEFzQHkM1QmJcXxBc0B5DNUJiXF&sourceid=chrome&ie=UTF-8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-xl flex items-center justify-center border transition-all hover:scale-110"
+            style={{ borderColor: 'hsl(var(--color-border))', color: 'hsl(var(--color-text))' }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'hsl(var(--color-primary) / 0.1)';
+              e.currentTarget.style.color = 'hsl(var(--color-primary))';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = 'hsl(var(--color-text))';
+            }}
+          >
+            <TbBrandGoogle className="w-6 h-6" />
           </a>
         </div>
 
