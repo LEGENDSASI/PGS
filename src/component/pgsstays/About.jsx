@@ -13,7 +13,9 @@ import {
   Heart,
   Star,
   CheckCircle,
-  Key
+  Key,
+  Waves,
+  UtensilsCrossed
 } from 'lucide-react';
 
 const AboutUsSection = () => {
@@ -50,16 +52,18 @@ const AboutUsSection = () => {
     }
   ];
 
-  const amenities = [
-    { icon: <Wifi className="w-5 h-5" />, name: "High-Speed WiFi" },
-    { icon: <Car className="w-5 h-5" />, name: "Parking Space" },
-    { icon: <Utensils className="w-5 h-5" />, name: "Kitchen Facilities" },
-    { icon: <Sparkles className="w-5 h-5" />, name: "Daily Cleaning" },
-    { icon: <Shield className="w-5 h-5" />, name: "24/7 Security" },
-    { icon: <Coffee className="w-5 h-5" />, name: "Complimentary Tea/Coffee" }
-  ];
+const amenities = [
+  { icon: <Wifi className="w-5 h-5" />, name: "High-Speed WiFi" },
+  { icon: <Car className="w-5 h-5" />, name: "Parking Space" },
+  { icon: <Utensils className="w-5 h-5" />, name: "Kitchen Facilities" },
+  { icon: <Sparkles className="w-5 h-5" />, name: "Room Service" },
+  { icon: <Shield className="w-5 h-5" />, name: "24/7 Security" },
+  { icon: <Coffee className="w-5 h-5" />, name: "Complimentary Tea/Coffee" },
+  { icon: <Waves className="w-5 h-5" />, name: "Swimming Pool" },
+  { icon: <UtensilsCrossed className="w-5 h-5" />, name: "Breakfast" }
+];
 
-  const pondicherryLocations = [
+  const pondicherryLocations = [  
     { name: "White Town", description: "French Quarter Heritage" },
     { name: "Beach Road", description: "Ocean View Properties" },
     { name: "Auroville", description: "Spiritual Community Area" },
@@ -111,7 +115,7 @@ const AboutUsSection = () => {
             About <span style={{ color: 'hsl(var(--color-primary))' }}>PGS Stays</span>
           </h2>
           <p className="text-lg md:text-xl max-w-4xl mx-auto">
-            Your home away from home in beautiful Pondicherry
+            "Your home away from home in beautiful Pondicherry"
           </p>
         </div>
 
@@ -193,7 +197,7 @@ const AboutUsSection = () => {
                   className="text-lg font-semibold"
                   style={{ color: 'hsl(var(--color-primary))' }}
                 >
-                  Experience Pondicherry with the comfort of home
+                  "Experience Pondicherry with the comfort of home"
                 </p>
               </div>
             </div>

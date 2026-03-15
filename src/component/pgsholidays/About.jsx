@@ -111,7 +111,7 @@ const AboutUsSection = () => {
             About <span style={{ color: 'hsl(var(--color-primary))' }}>PGS Holidays</span>
           </h2>
           <p className="text-lg md:text-xl max-w-4xl mx-auto">
-            Creating unforgettable travel experiences for every kind of traveler
+            "Creating unforgettable travel experiences for every kind of traveler"
           </p>
         </div>
 
