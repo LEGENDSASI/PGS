@@ -92,7 +92,7 @@ const AboutUsSection = () => {
             About <span style={{ color: 'hsl(var(--color-primary))' }}>PGS Events</span>
           </h2>
           <p className="text-lg md:text-xl max-w-4xl mx-auto">
-            Creating unforgettable celebrations with professional event planning
+            "Creating unforgettable celebrations with professional event planning"
           </p>
         </div>
 

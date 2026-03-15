@@ -143,9 +143,9 @@ const ContactSection = () => {
                     Review Us
                   </h3>
                   <p className="text-gray-700">
-                    Love our service? Share your experience with us on Google.
+                    "Love our service? Share your experience with us on Google.
                     Your feedback helps others discover us and improves our
-                    service.
+                    service."
                   </p>
                 </div>
               </div>
