@@ -15,15 +15,7 @@ import p12 from '../assets/property/Events/birthday_party.jpg';
 import p13 from '../assets/property/Events/corporate-event.webp';
 import p14 from '../assets/property/Events/New_Year_Party.jpg';
 import p15 from '../assets/property/PGS_Holidays_OurProperties/9.JPG';
-import p16 from '../assets/property/PGS_Holidays_OurProperties/8.JPG';
-
-
-
-
-
-
-
-
+import p16 from '../assets/property/PGS_Holidays_OurProperties/8.jpeg';
 
 
 const OurProperties = () => {

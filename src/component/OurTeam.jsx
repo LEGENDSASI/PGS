@@ -42,7 +42,7 @@ const OurTeam = () => {
     { id: 1, name: "Keerthika", role: "CEO & Managing Director", image: t1 },
     { id: 2, name: "Priya Soop", role: "Project Manager", image: t2 },
     { id: 9, name: "Dhivya Maharajan", role: "Human Resource & Procurement", image: divyaMaharajan },
-    { id: 4, name: "Sujan", role: "Tourist Operational Head", image: sujan, language: 'English, Hindi, Kanada, Telugu' },
+    { id: 4, name: "Sujan", role: "Tour Operations Head", image: sujan, language: 'English, Hindi, Kanada, Telugu' },
     { id: 3, name: "Shafreen", role: "Tourist Guide", image: t3, language: 'Hindi, English, Tamil, urdu, French' },
     { id: 7, name: "Akshai", role: "Tourist Guide", image: t7, language: 'English, Tamil, Hindi, Malayalam' },
     { id: 8, name: "Iniyashre", role: "BDE / Tourist Guide", image: t8, language: 'Tamil, English, Hindi, Telugu' },
