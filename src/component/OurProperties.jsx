@@ -14,7 +14,7 @@ import p11 from '../assets/property/p13.jpg';
 import p12 from '../assets/property/Events/birthday_party.jpg';
 import p13 from '../assets/property/Events/corporate-event.webp';
 import p14 from '../assets/property/Events/New_Year_Party.jpg';
-import p15 from '../assets/property/PGS_Holidays_OurProperties/9.JPG';
+import p15 from '../assets/property/PGS_Holidays_OurProperties/1.jpeg';
 import p16 from '../assets/property/PGS_Holidays_OurProperties/8.jpeg';
 
 

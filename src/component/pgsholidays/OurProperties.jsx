@@ -28,7 +28,7 @@ const OurProperties = () => {
         className="text-4xl md:text-5xl text-center font-bold mb-10"
         style={{ color: 'hsl(var(--color-text))' }}
       >
-        Our Trips
+        Our Happy Guests
       </motion.h2>
 
       <div className="columns-1 md:columns-2 lg:columns-3 gap-4 px-4">
