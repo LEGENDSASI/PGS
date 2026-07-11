@@ -1,20 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import p1 from '../../assets/property/PGS_Holidays_OurProperties/4.JPG'
-import p2 from '../../assets/property/PGS_Holidays_OurProperties/5.JPG';
+import p2 from '../../assets/property/PGS_Holidays_OurProperties/5.jpeg';
 import p3 from '../../assets/property/PGS_Holidays_OurProperties/6.JPG';
-import p4 from '../../assets/property/PGS_Holidays_OurProperties/7.JPG';
-import p5 from '../../assets/property/PGS_Holidays_OurProperties/8.JPG';
+import p4 from '../../assets/property/PGS_Holidays_OurProperties/7.jpeg';
+import p5 from '../../assets/property/PGS_Holidays_OurProperties/8.jpeg';
 import p6 from '../../assets/property/PGS_Holidays_OurProperties/10.png';
-import p7 from '../../assets/property/PGS_Holidays_OurProperties/11.png';
+import p7 from '../../assets/property/PGS_Holidays_OurProperties/11.jpeg';
 import p8 from '../../assets/property/PGS_Holidays_OurProperties/12.png';
+import p9 from '../../assets/property/PGS_Holidays_OurProperties/1.jpeg';
+import p10 from '../../assets/property/PGS_Holidays_OurProperties/2.jpeg';
 
 
 
 
 
 const OurProperties = () => {
-  const images = [p1, p2, p3, p4, p5 , p6 , p7 , p8 , p1 , p3] ;
+  const images = [ p7 , p1, p2, p10, p4, p5 , p6 , p8 , p9 , p3] ;
 
   return (
     <div className="py-16" id='properties'>
@@ -26,7 +28,7 @@ const OurProperties = () => {
         className="text-4xl md:text-5xl text-center font-bold mb-10"
         style={{ color: 'hsl(var(--color-text))' }}
       >
-        Our Trips
+        Our Happy Guests
       </motion.h2>
 
       <div className="columns-1 md:columns-2 lg:columns-3 gap-4 px-4">

@@ -5,18 +5,21 @@ import p2 from '../../assets/property/p2.jpg';
 import p3 from '../../assets/property/p3.jpg';
 import p4 from '../../assets/property/p5.jpeg';
 import p5 from '../../assets/property/p6.jpeg';
-import p6 from '../../assets/property/p7.jpg';
+import p6 from '../../assets/property/p7.jpeg';
 import p7 from '../../assets/property/p8.jpg';
 import p8 from '../../assets/property/p10.jpg';
 import p9 from '../../assets/property/p11.jpg';
-import p10 from '../../assets/property/p12.jpg';
-import p11 from '../../assets/property/p13.jpg';
-
+import p10 from '../../assets/property/p12.jpeg';
+import p11 from '../../assets/property/p13.jpeg';
+import p12 from '../../assets/stays/pgs_stays1.jpeg';
+import p13 from '../../assets/stays/pgs_stays2.jpeg';
+import p14 from '../../assets/stays/pgs_stays3.jpeg';
+import p15 from '../../assets/stays/pgs_stays4.jpeg';
 
 
 
 const OurProperties = () => {
-  const images = [p1, p2, p3, p4, p5, p6, p7 , p8 , p9 , p10 , p11];
+  const images = [p12, p13, p14, p15, p2, p3, p4, p5, p6, p7 , p8 , p9 , p10 , p11];
 
   return (
     <div className="py-16" id='properties'>
