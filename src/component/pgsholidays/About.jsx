@@ -45,7 +45,7 @@ const AboutUsSection = () => {
     {
       icon: <Briefcase className="w-6 h-6" />,
       name: "Corporate Groups",
-      description: "Team building and corporate retreats"
+      description: "Corporate events and retreats"
     }
   ];
 

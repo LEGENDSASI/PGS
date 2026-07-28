@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const navigate = useNavigate();
 
   const reviews = [
     {
@@ -120,8 +122,10 @@ const Reviews = () => {
                   style={{
                     borderColor: 'hsl(var(--color-border))',
                     backgroundColor: 'hsl(var(--color-bg) / 0.7)',
-                    backdropFilter: 'blur(10px)'
+                    backdropFilter: 'blur(10px)',
+                    cursor: 'pointer'
                   }}
+                  onClick={() => { navigate(`https://share.google/GBNyFVg0cmu8GsBRJ`) }}
                 >
                   <div className="absolute top-8 left-8">
                     <Quote

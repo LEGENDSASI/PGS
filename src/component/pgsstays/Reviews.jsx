@@ -117,8 +117,11 @@ const Reviews = () => {
                   style={{
                     borderColor: 'hsl(var(--color-border))',
                     backgroundColor: 'hsl(var(--color-bg) / 0.7)',
-                    backdropFilter: 'blur(10px)'
+                    backdropFilter: 'blur(10px)',
+                    cursor: 'pointer'
                   }}
+                  onClick={() => { navigate(`https://share.google/GBNyFVg0cmu8GsBRJ`) }}
+
                 >
                   <div className="absolute top-8 left-8">
                     <Quote

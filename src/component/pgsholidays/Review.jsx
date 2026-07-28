@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const navigate = useNavigate();
 
   const reviews = [
     {
       id: 1,
       rating: 5,
-      comment:"We had an amazing experience with PGS Holidays. From the moment we booked till the end of the trip, everything was perfectly organized. Best prices in town, excellent coordination, comfortable stay, tasty food, and very friendly staff. The guide and driver were very professional and supportive throughout the trip. Highly recommended for couples, families, and group tours. Will definitely book again! "
+      comment: "We had an amazing experience with PGS Holidays. From the moment we booked till the end of the trip, everything was perfectly organized. Best prices in town, excellent coordination, comfortable stay, tasty food, and very friendly staff. The guide and driver were very professional and supportive throughout the trip. Highly recommended for couples, families, and group tours. Will definitely book again! "
     },
     {
       id: 2,
@@ -20,12 +22,12 @@ const Reviews = () => {
     {
       id: 3,
       rating: 5,
-      comment:"We had a wonderful experience with PGS Holidays. Right from booking to the end of the trip, everything was well planned and smoothly executed. The pricing was very reasonable, the stay was comfortable, the food was good, and the overall coordination was excellent. The driver and guide were friendly and supportive throughout the journey. Highly recommended for families and group trips."
+      comment: "We had a wonderful experience with PGS Holidays. Right from booking to the end of the trip, everything was well planned and smoothly executed. The pricing was very reasonable, the stay was comfortable, the food was good, and the overall coordination was excellent. The driver and guide were friendly and supportive throughout the journey. Highly recommended for families and group trips."
     },
     {
       id: 4,
       rating: 5,
-      comment:"PGS Holidays made our trip completely stress-free and enjoyable. All arrangements were handled perfectly, including accommodation, food, sightseeing, and local travel in a comfortable AC vehicle. The team was always reachable and very responsive. Their focus on customer satisfaction really stands out. Truly a reliable and professional holiday planner."
+      comment: "PGS Holidays made our trip completely stress-free and enjoyable. All arrangements were handled perfectly, including accommodation, food, sightseeing, and local travel in a comfortable AC vehicle. The team was always reachable and very responsive. Their focus on customer satisfaction really stands out. Truly a reliable and professional holiday planner."
     },
     {
       id: 5,
@@ -115,8 +117,10 @@ const Reviews = () => {
                   style={{
                     borderColor: 'hsl(var(--color-border))',
                     backgroundColor: 'hsl(var(--color-bg) / 0.7)',
-                    backdropFilter: 'blur(10px)'
+                    backdropFilter: 'blur(10px)',
+                    cursor: 'pointer',
                   }}
+                  onClick={() => { navigate(`https://share.google/GBNyFVg0cmu8GsBRJ`) }}
                 >
                   <div className="absolute top-8 left-8">
                     <Quote
