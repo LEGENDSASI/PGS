@@ -1,30 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Hotel, Users, Calendar, Shield, CheckCircle } from 'lucide-react';
+import './AboutUS.css';
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
-  const services = [
-    { 
-      title: "Pondy Getaway Stays", 
-      description: "Premium and comfortable accommodations in Pondicherry",
-      icon: <Hotel className="w-6 h-6" />
-    },
-    { 
-      title: "PGS Holidays", 
-      description: "Your trusted partner for memorable trips and travel experiences",
-      icon: <Users className="w-6 h-6" />
-    },
-    { 
-      title: "PGS Events", 
-      description: "Perfectly planned weddings, parties, and special celebrations",
-      icon: <Calendar className="w-6 h-6" />
-    },
-    { 
-      title: "Group Bookings", 
-      description: "Seamless bookings for groups, trips, and events",
-      icon: <Users className="w-6 h-6" />
-    }
-  ];
+  const navigate = useNavigate();
+const services = [
+  {
+    title: "Pondy Getaway Stays",
+    description: "Premium and comfortable accommodations in Pondicherry",
+    icon: <Hotel className="w-6 h-6" />,
+    path: "/pgs-stays",
+  },
+  {
+    title: "PGS Holidays",
+    description: "Your trusted partner for memorable trips and travel experiences",
+    icon: <Users className="w-6 h-6" />,
+    path: "/pgs-holidays",
+  },
+  {
+    title: "PGS Events",
+    description: "Perfectly planned weddings, parties, and special celebrations",
+    icon: <Calendar className="w-6 h-6" />,
+    path: "/pgs-events",
+  },
+];
 
   return (
     <div
@@ -85,13 +86,22 @@ const AboutUs = () => {
             comfort and reliability.
           </p>
         </motion.div>
-
+     <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-5xl text-center font-bold mb-10"
+        style={{ color: 'hsl(var(--color-text))' }}
+      >
+         Our Services
+      </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          className="services-grid gap-6 mb-16"
         >
           {services.map((service, index) => (
             <motion.div
@@ -100,11 +110,13 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 rounded-xl border text-center"
+              className="our-services-card p-6 rounded-xl border text-center"
               style={{
                 borderColor: 'hsl(var(--color-border))',
-                backgroundColor: 'hsl(var(--color-bg))'
+                backgroundColor: 'hsl(var(--color-bg))',
+                cursor: 'pointer',
               }}
+              onClick={() => navigate(service.path)}
             >
               <div
                 className="w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-4 border"
@@ -159,8 +171,8 @@ const AboutUs = () => {
 
               <div className="space-y-4">
                 {[
-                  "All-in-one solution for stays, trips, and events",
-                  "Trusted local expertise in Pondicherry",
+                  "The complete platform for stays, trips, and events",
+                  "Trusted local expertise in South India",
                   "Premium and comfortable accommodations",
                   "Personalized planning and dedicated support",
                   "End-to-end coordination for every experience"
@@ -242,9 +254,7 @@ const AboutUs = () => {
                   className="text-lg leading-relaxed"
                   style={{ color: 'hsl(var(--color-text) / 0.8)' }}
                 >
-                  Share your requirements with us and our team will take care of
-                  everything, from planning and coordination to execution,
-                  delivering experiences you will always remember.
+                  Share your vision, we’ll handle the rest. From planning to flawless execution, our team crafts experiences you’ll never forget.
                 </p>
               </div>
             </div>
