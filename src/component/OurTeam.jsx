@@ -44,9 +44,9 @@ const OurTeam = () => {
     { id: 9, name: "Dhivya Maharajan", role: "Human Resource & Procurement", image: divyaMaharajan },
     { id: 4, name: "Sujan", role: "Tour Operations Head", image: sujan, language: 'English, Hindi, Kanada, Telugu' },
     // { id: 3, name: "Shafreen", role: "Tourist Guide", image: t3, language: 'Hindi, English, Tamil, urdu, French' },
-    { id: 7, name: "Akshai", role: "Tourist Guide", image: t7, language: 'English, Tamil, Hindi, Malayalam' },
+    { id: 7, name: "Akshai", role: "Senior Tourist Guide", image: t7, language: 'English, Tamil, Hindi, Malayalam' },
     { id: 8, name: "Iniyashre", role: "BDE / Tourist Guide", image: t8, language: 'Tamil, English, Hindi, Telugu' },
-    { id: 6, name: "Sasikumar", role: "Digital Marketing", image: sasikumar },
+    { id: 6, name: "Sasikumar", role: "Digital Marketing & Event Manager", image: sasikumar },
   ];
 
   const handleAddReview = (member) => {
